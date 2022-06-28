@@ -8,4 +8,4 @@ Choose if you want the version with single or double quotes, put the json file i
 
 # Other
 
-I also recommend using [StandLLS](github.com/well-in-that-case/StandLLS) for intellisense. 
+I also recommend using [StandLLS](https://github.com/well-in-that-case/StandLLS) for intellisense. 
