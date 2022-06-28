@@ -1,0 +1,281 @@
+{
+	// Place your snippets for lua here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+
+	// boilerpllate snippets
+	"Create a new stand lua": {
+		"prefix": "newstandlua",
+		"body": [
+			"util.require_natives(1651208000)",
+			"",
+			"local my_root = menu.my_root()",
+			"",
+			"${0:--code}",
+			"",
+			"util.keep_running()",
+		],
+		"description": "Some boilerplate for new scripts."
+	},
+	"Create a new player options": {
+		"prefix": "newplayeroptions",
+		"body": [
+			"players.on_join(function(pid)",
+			"    menu.divider(menu.player_root(pid), \"\")",
+			"    local player_root = menu.list(menu.player_root(pid), \"\")",
+			"",
+			"    --options$0",
+			"end)",
+			"",
+			"players.dispatch_on_join()"
+		],
+		"description": "Some boilerplate for new player options."
+	},
+
+	// menu options snippets
+	"Create a list": {
+		"prefix": "list",
+		"body": [
+			"menu.list(${1:parent}, \"$2\", {\"$3\"}, \"$4\")"
+		],
+		"description": "Create a action."
+	},
+	"Create a list with on_click": {
+		"prefix": "list on_click",
+		"body": [
+			"menu.list(${1:parent}, \"$2\", {\"$3\"}, \"$4\", function()",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a lsit with on_click."
+	},
+	"Create a list with functions": {
+		"prefix": "list on_click on_back",
+		"body": [
+			"menu.list(${1:parent}, \"$2\", {\"$3\"}, \"$4\", function()",
+			"    $0",
+			"end, function()",
+			"",
+			"end)",
+		],
+		"description": "Create a list with both on_click and on_back."
+	},
+	"Create an action": {
+		"prefix": "action",
+		"body": [
+			"menu.action(${1:parent}, \"$2\", {\"$3\"}, \"$4\", function()",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a action."
+	},
+	"Create a toggle": {
+		"prefix": "toggle",
+		"body": [
+			"menu.toggle(${1:parent}, \"$2\", {\"$3\"}, \"$4\", function(toggle)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a toggle."
+	},
+	"Create a toggle loop": {
+		"prefix": "toggle_loop",
+		"body": [
+			"menu.toggle_loop(${1:parent}, \"$2\", {\"$3\"}, \"$4\", function()",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a toggle loop."
+	},
+	"Create a toggle loop with on_stop": {
+		"prefix": "toggle_loop on_stop",
+		"body": [
+			"menu.toggle_loop(${1:parent}, \"$2\", {\"$3\"}, \"$4\", function()",
+			"",
+			"end, function()",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a toggle loop with a on_stop function."
+	},
+	"Create a slider": {
+		"prefix": "slider",
+		"body": [
+			"menu.slider(${1:parent}, \"$2\", {\"$3\"}, \"$4\", ${5:min_value}, ${6:max_value}, ${7:default_value}, ${8:step_size}, function(value)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a slider."
+	},
+	"Create a float slider": {
+		"prefix": "slider_float",
+		"body": [
+			"menu.slider_float(${1:parent}, \"$2\", {\"$3\"}, \"$4\", ${5:min_value}, ${6:max_value}, ${7:default_value}, ${8:step_size}, function(value)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a float slider."
+	},
+	"Create a click slider": {
+		"prefix": "click_slider",
+		"body": [
+			"menu.click_slider(${1:parent}, \"$2\", {\"$3\"}, \"$4\", ${5:min_value}, ${6:max_value}, ${7:default_value}, ${8:step_size}, function(value)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a click slider."
+	},
+	"Create a float click slider": {
+		"prefix": "click_slider_float",
+		"body": [
+			"menu.click_slider_float(${1:parent}, \"$2\", {\"$3\"}, \"$4\", ${5:min_value}, ${6:max_value}, ${7:default_value}, ${8:step_size}, function(value)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a float click slider."
+	},
+	"Create a list select": {
+		"prefix": "list_select",
+		"body": [
+			"menu.list_select(${1:parent}, \"$2\", {\"$3\"}, \"$4\", {\"\", {\"\"}, \"\"}, function(index, value, prev_index)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a list select."
+	},
+	"Create a list action": {
+		"prefix": "list_action",
+		"body": [
+			"menu.list_action(${1:parent}, \"$2\", {\"$3\"}, \"$4\", {\"\", {\"\"}, \"\"}, function(index, value)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a list action."
+	},
+	"Create a text input": {
+		"prefix": "text_input",
+		"body": [
+			"menu.text_input(${1:parent}, \"$2\", {\"$3\"}, \"$4\", function(input)",
+			"    $0",
+			"end, \"\")",
+		],
+		"description": "Create a text input."
+	},
+	"Create a colour": {
+		"prefix": "colour",
+		"body": [
+			"menu.colour(${1:parent}, \"$2\", {\"$3\"}, \"$4\", ${5:colour}, ${6:transparency}, function(colour)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a text input."
+	},
+	"Create a rgb colour": {
+		"prefix": "rgbcolour",
+		"body": [
+			"menu.colour(${1:parent}, \"$2\", {\"$3\"}, \"$4\", ${5:red}, ${6:green}, ${7:blue}, ${8:alpha}, {9:transparency}, function(colour)",
+			"    $0",
+			"end, \"\")",
+		],
+		"description": "Create a rgb colour"
+	},
+	"Create a rainbow": {
+		"prefix": "rgbcolour",
+		"body": [
+			"menu.rainbow($0)"
+		],
+		"description": "Create a rainbow"
+	},
+	"Create a divider": {
+		"prefix": "rgbcolour",
+		"body": [
+			"menu.divider(${1:parent}, \"$2\")"
+		],
+		"description": "Create a divider"
+	},
+	"Create a readonly": {
+		"prefix": "readonly",
+		"body": [
+			"menu.readonly(${1:parent}, \"$2\", \"$3\")"
+		],
+		"description": "Create a divider"
+	},
+	"Create a hyperlink": {
+		"prefix": "readonly",
+		"body": [
+			"menu.hyperlink(${1:parent}, \"$2\", \"$23\", \"$4\")"
+		],
+		"description": "Create a hyperlink"
+	},
+	"Create a action slider": {
+		"prefix": "list_action",
+		"body": [
+			"menu.list_action(${1:parent}, \"$2\", {\"$3\"}, \"$4\", {\"$5\", \"$6\"}, function(index, value)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a action slider."
+	},
+	"Create a slider text": {
+		"prefix": "list_action",
+		"body": [
+			"menu.list_action(${1:parent}, \"$2\", {\"$3\"}, \"$4\", {\"$5\", \"$6\"}, function(index, value)",
+			"    $0",
+			"end)",
+		],
+		"description": "Create a action slider."
+	},
+
+	// other common snippets
+	"Toast a message": {
+		"prefix": "toast",
+		"body": [
+			"util.toast($0)"
+		],
+		"description": "Create a toast."
+	},
+	"Log a message": {
+		"prefix": "log",
+		"body": [
+			"util.log($0)"
+		],
+		"description": "Create a log."
+	},
+	"Toast a v3": {
+		"prefix": "toast  v3",
+		"body": [
+			"util.toast(pos.x ..\", \".. pos.y ..\", \".. pos.z)"
+		],
+		"description": "Create a toast for a v3."
+	},
+
+	// lua snippets
+	"For i loop": {
+		"prefix": "fori",
+		"body": [
+			"for i = 1, $1 do",
+			"    $0",
+			"end",
+		],
+		"description": "Create a for i loop."
+	},
+	"For kv loop": {
+		"prefix": "forkv",
+		"body": [
+			"for k, v in pairs(${1:parent}) do",
+			"    $0",
+			"end",
+		],
+		"description": "Create a for kv loop."
+	},
+	"For kvi loop": {
+		"prefix": "forkvi",
+		"body": [
+			"for k, v in ipairs(${1:parent}) do",
+			"    $0",
+			"end",
+		],
+		"description": "Create a for kvi loop."
+	},
+}
